@@ -4,6 +4,7 @@ const enterbtn = document.querySelector("#enterbtn");
 const trybtn = document.querySelector("#trybtn");
 const resetbtn = document.querySelector("#resetbtn");
 const startmsg = document.querySelector(".start_msg");
+const startmsg2 = document.querySelector(".start_msg2");
 const winmsg = document.querySelector("#win_msg");
 const min = 0;
 const max = 50;
@@ -31,7 +32,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     startbtn.onclick = () => {
-        startmsg.innerHTML = "Enter Any Number Between (0-50) USE LOGIC (No Random Guess)";
+        startmsg.innerHTML = "Enter Any Number Between (0-50)";
+        startmsg2.innerHTML = "USE LOGIC (No Random Guess)";
         startbtn.disabled = true;
         guess.disabled = false;
         resetbtn.disabled = false;
