@@ -6,7 +6,7 @@ const resetbtn = document.querySelector("#resetbtn");
 const startmsg = document.querySelector(".start_msg");
 const winmsg = document.querySelector("#win_msg");
 const min = 0;
-const max = 100;
+const max = 50;
 let randomnum;
 let lives = 5;
 let ans;
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     startbtn.onclick = () => {
-        startmsg.innerHTML = `Enter Any Number (0-100)`
+        startmsg.innerHTML = "Enter Any Number (0-50) **USE LOGIC**";
         startbtn.disabled = true;
         guess.disabled = false;
         resetbtn.disabled = false;
@@ -83,10 +83,18 @@ document.addEventListener("DOMContentLoaded", () => {
                 lives--;
                 document.querySelector("#lives").innerHTML = `Lives: ${lives}`;
                 if (lives > 0) {
-                    winmsg.innerHTML = `Lost (${ans} is a Incorrect Guess)`
-                    guess.disabled = true;
-                    trybtn.disabled = false;
-                    enterbtn.disabled = true;
+                    if (ans > randomnum) {
+                        winmsg.innerHTML = `Lost (${ans} is a Incorrect Guess), Try Smaller No.`
+                        guess.disabled = true;
+                        trybtn.disabled = false;
+                        enterbtn.disabled = true;
+                    }
+                    else if (ans < randomnum) {
+                        winmsg.innerHTML = `Lost (${ans} is a Incorrect Guess), Try Bigger No.`
+                        guess.disabled = true;
+                        trybtn.disabled = false;
+                        enterbtn.disabled = true;
+                    }
                 }
                 else if (lives == 0) {
                     winmsg.innerHTML = "<img src=\"gameover.gif\" width=\"200px\">";
