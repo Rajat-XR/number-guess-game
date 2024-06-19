@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     startbtn.onclick = () => {
-        startmsg.innerHTML = "Enter Any Number (0-50) **USE LOGIC**";
+        startmsg.innerHTML = "Enter Any Number Between (0-50) inclusive **USE LOGIC**";
         startbtn.disabled = true;
         guess.disabled = false;
         resetbtn.disabled = false;
